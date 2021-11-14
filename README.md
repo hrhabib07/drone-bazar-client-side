@@ -1,70 +1,75 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instarctoion for admin
 
-## Available Scripts
+Please read this section if you are an admin or tester of this website.
 
-In the project directory, you can run:
+You will find add services section on the buttom of home page and if you want to add services 
+on this project you have to have this id and password just copy paste on the ui you will proceed.
 
-### `yarn start`
+Thank you.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+    Admin Id : admin@admin.com 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    Admin Pass : 123456
+  
+```
+    
+## Authors
 
-### `yarn test`
+- [@Hr Habib](https://www.facebook.com/hrhabib07)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
+## Documentation
 
-### `yarn build`
+This is a simple drone selling website made with react.js 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- Live site of my project is [Drone Bazar](https://drone-bazar-react-app.web.app/home) -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+## FAQ
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Is your site responsive?
 
-### `yarn eject`
+Yes my site is a little bit responsive. I know how to make a websire responsive. But this project is made for learning authentication and react-router purpase therefore I didn't make it responsive.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Is your site Dynamic?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Yes it is Dynamic.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### can I make a appointment using your website?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+No. I didn't add any real hospital information therefoe it's not abailabile right now. 
 
-## Learn More
+  
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To deploy this project run 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  $ firebase deploy
+```
 
-### Code Splitting
+  
+## FoodEagle details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We are the best drone seller in Kochukeht . We wrok 24/7 for our customers saticfaction. We think it's our first responsivility.
+  
+## 🛠 Skills
+React, Tailwind, Javascript, Metarial UI, TypeScript, HTML, CSS, Bootstrap...
 
-### Analyzing the Bundle Size
+  
+## Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Additional browser support
 
-### Making a Progressive Web App
+- Add more integrations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  
+## Related
 
-### Advanced Configuration
+Here are some related projects
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[Awesome README](https://github.com/matiassingers/awesome-readme)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
