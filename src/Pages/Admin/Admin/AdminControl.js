@@ -6,7 +6,7 @@ const AdminControl = () => {
   const [drones, setDrones] = useState();
   const [newProduct, setNewProduct] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://nameless-ridge-59413.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setDrones(data));
   }, []);
@@ -18,7 +18,7 @@ const AdminControl = () => {
     setNewProduct(product);
   };
   const handleAddProduct = (e) => {
-    fetch("http://localhost:5000/newProduct", {
+    fetch("https://nameless-ridge-59413.herokuapp.com/newProduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",

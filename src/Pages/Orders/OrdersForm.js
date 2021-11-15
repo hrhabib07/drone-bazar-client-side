@@ -21,7 +21,7 @@ const OrdersForm = ({ orders, price }) => {
       price,
     };
     if (orders.length > 0) {
-      fetch("http://localhost:5000/newOrders", {
+      fetch("https://nameless-ridge-59413.herokuapp.com/newOrders", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -30,7 +30,7 @@ const OrdersForm = ({ orders, price }) => {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
-      fetch(`http://localhost:5000/deleteMyOrders`, {
+      fetch(`https://nameless-ridge-59413.herokuapp.com/deleteMyOrders`, {
         method: "delete",
         headers: { "content-type": "application/json" },
       })

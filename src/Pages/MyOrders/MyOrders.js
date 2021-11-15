@@ -5,7 +5,7 @@ import DisplayOrders from "./DisplayOrders";
 const MyOrders = () => {
   const [myOrders, setMyOrders] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/myOrders")
+    fetch("https://nameless-ridge-59413.herokuapp.com/myOrders")
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, []);

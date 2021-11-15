@@ -5,7 +5,7 @@ import OrdersForm from "../Orders/OrdersForm";
 const DisplayOrders = ({ order }) => {
   console.log(order);
   const handleCancelOrder = (id) => {
-    fetch(`http://localhost:5000/newOrders/${id}`, {
+    fetch(`https://nameless-ridge-59413.herokuapp.com/newOrders/${id}`, {
       method: "delete",
       headers: { "content-type": "application/json" },
     })

@@ -7,7 +7,7 @@ const Explore = () => {
   const [drones, setDrones] = useState();
   const [orders, setOrders] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://nameless-ridge-59413.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setDrones(data));
   }, []);
@@ -16,7 +16,7 @@ const Explore = () => {
     totalPrice = totalPrice + Number(od.price);
   });
 
-  fetch("http://localhost:5000/orders")
+  fetch("https://nameless-ridge-59413.herokuapp.com/orders")
     .then((res) => res.json())
     .then((data) => setOrders(data));
 

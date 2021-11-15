@@ -9,7 +9,7 @@ const Products = ({ drone }) => {
     const newOrder = { ...order };
     const { _id, ...rest } = newOrder;
     console.log(rest);
-    fetch("http://localhost:5000/orders", {
+    fetch("https://nameless-ridge-59413.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

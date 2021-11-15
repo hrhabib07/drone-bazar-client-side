@@ -13,7 +13,7 @@ const Orders = () => {
   const [orders, setOrders] = useState();
 
   const handleCancelOrder = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://nameless-ridge-59413.herokuapp.com/orders/${id}`, {
       method: "delete",
       headers: { "content-type": "application/json" },
     })
@@ -26,7 +26,7 @@ const Orders = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://nameless-ridge-59413.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);

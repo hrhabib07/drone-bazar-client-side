@@ -6,7 +6,7 @@ import Products from "./Products";
 const FeatureProducts = () => {
   const [drones, setDrones] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://nameless-ridge-59413.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setDrones(data));
   }, []);

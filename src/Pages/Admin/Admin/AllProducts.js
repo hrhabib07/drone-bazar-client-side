@@ -3,7 +3,7 @@ import React from "react";
 
 const AllProducts = ({ drone }) => {
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://nameless-ridge-59413.herokuapp.com/products/${id}`, {
       method: "delete",
       headers: { "content-type": "application/json" },
     })
