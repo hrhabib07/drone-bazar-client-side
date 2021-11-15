@@ -1,4 +1,11 @@
-import { Button, Container, Grid, Paper, Typography } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AllProducts from "./AllProducts";
@@ -30,11 +37,15 @@ const Explore = () => {
       >
         Our Products
       </Typography>
-      <Grid container spacing={2} xs={12} md={12} sx={{ my: 4 }}>
-        {drones?.map((drone) => (
-          <AllProducts drone={drone}> </AllProducts>
-        ))}
-      </Grid>
+      {drones?.length ? (
+        <Grid container spacing={2} xs={12} md={12} sx={{ my: 4 }}>
+          {drones?.map((drone) => (
+            <AllProducts drone={drone}> </AllProducts>
+          ))}
+        </Grid>
+      ) : (
+        <CircularProgress />
+      )}
       <Grid container spacing={2} xs={12} md={12} sx={{ m: 1 }}>
         <Paper elevation={3} alignCenter sx={{ mx: "auto", p: 5 }}>
           <Typography

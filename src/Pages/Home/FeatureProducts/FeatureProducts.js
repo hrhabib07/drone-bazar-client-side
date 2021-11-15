@@ -1,4 +1,10 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Products from "./Products";
@@ -21,11 +27,15 @@ const FeatureProducts = () => {
       >
         Our Products
       </Typography>
-      <Grid container spacing={2}>
-        {drones?.slice(0, 6).map((drone) => (
-          <Products drone={drone}> </Products>
-        ))}
-      </Grid>
+      {drones?.length ? (
+        <Grid container spacing={2}>
+          {drones?.slice(0, 6).map((drone) => (
+            <Products drone={drone}> </Products>
+          ))}
+        </Grid>
+      ) : (
+        <CircularProgress />
+      )}
       <br />
       <Link to="/explore" style={{ textDecoration: "none" }}>
         <Button variant="outlined">View orders</Button>

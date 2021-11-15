@@ -12,6 +12,7 @@ import Orders from "./Pages/Orders/Orders";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AdminControl from "./Pages/Admin/Admin/AdminControl";
 import MyOrders from "./Pages/MyOrders/MyOrders";
+import ProcessAfterReview from "./Pages/Orders/ProcessAfterReview";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="/adminLogin">
               <AdminLogin />
+            </Route>
+            <Route path="/processReview">
+              <ProcessAfterReview />
             </Route>
             <Route path="/myOrders">
               <MyOrders />

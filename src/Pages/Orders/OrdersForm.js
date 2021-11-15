@@ -1,6 +1,7 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const OrdersForm = ({ orders, price }) => {
   const [ordersData, setOrdersData] = useState({});
@@ -29,18 +30,23 @@ const OrdersForm = ({ orders, price }) => {
         body: JSON.stringify(newOrder),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          if (data) {
+            alert("Order added Successfully");
+          }
+        });
+
       fetch(`https://nameless-ridge-59413.herokuapp.com/deleteMyOrders`, {
         method: "delete",
         headers: { "content-type": "application/json" },
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
+      history.push("/processReview");
     } else {
       alert("Please add some products to place order");
     }
 
-    history.push("/");
     e.preventDefault();
   };
 
