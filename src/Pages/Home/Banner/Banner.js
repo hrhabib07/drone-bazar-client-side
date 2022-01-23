@@ -1,36 +1,40 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
 const Banner = () => {
-  const bgImage = `https://image.freepik.com/free-photo/aerial-drone-panoramic-view-nature-moldova_1268-18134.jpg`;
+  const bgImage = `https://nypost.com/wp-content/uploads/sites/2/2017/03/drones_feature.jpg?quality=80&strip=all`;
   return (
-    <Grid
+    <Box
       style={{
-        backgroundColor: "#4c7cd0",
+        backgroundColor: "#b5cdfa",
       }}
-      container
-      spacing={0}
     >
-      <Grid item xs={12} md={6}>
-        <Box sx={{ m: 4, color: "white" }}>
-          <Typography variant="h2" component="div" gutterBottom>
-            Welcome to Drone Bazar
-          </Typography>
-          <Typography variant="h6" component="div" gutterBottom>
-            The biggest drone shop in Kochuketh
-          </Typography>
-        </Box>
+      <Grid container spacing={0}>
+        <Grid item xs={12} md={6}>
+          <Container
+            sx={{
+              height: "400px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ color: "darkblue" }}>
+              <Typography variant="h2" component="div" gutterBottom>
+                Welcome to <span style={{ color: "yellow" }}>Drone Bazar</span>
+              </Typography>
+              <Typography variant="h6" component="div" gutterBottom>
+                The biggest drone shop in Your Area
+              </Typography>
+            </Box>
+          </Container>
+        </Grid>
+        <Grid item xs={12} md={6} sx={{ mb: 0 }}>
+          <img src={bgImage} alt="drone" width="100%" height="100%" />
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6} sx={{ p: 0, m: 0 }}>
-        <img
-          src="https://image.freepik.com/free-photo/light-motor-drone-control-helicopter_1172-169.jpg"
-          alt="drone"
-          width="100%"
-          height="300px"
-        />
-      </Grid>
-    </Grid>
+    </Box>
   );
 };
 

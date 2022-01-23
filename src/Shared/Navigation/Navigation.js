@@ -27,12 +27,7 @@ const Navigation = () => {
               <span>Drone Bazar</span>
             </Link>
           </Typography>
-          <Link
-            to="/myOrders"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            <Button color="inherit">Orders</Button>
-          </Link>
+
           <Link
             to="/explore"
             style={{ textDecoration: "none", color: "white" }}
@@ -40,10 +35,12 @@ const Navigation = () => {
             <Button color="inherit">Explore</Button>
           </Link>
           {user.email ? (
-            <Button color="inherit" onClick={logout}>
-              Logout
-              <br />({user.displayName})
-            </Button>
+            <Box>
+              <Button color="inherit" onClick={logout}>
+                Logout
+                <br />({user.displayName})
+              </Button>
+            </Box>
           ) : (
             <Link
               to="/login"

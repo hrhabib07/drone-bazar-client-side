@@ -29,7 +29,7 @@ const FeatureProducts = () => {
       </Typography>
       {drones?.length ? (
         <Grid container spacing={2}>
-          {drones?.slice(0, 6).map((drone) => (
+          {drones?.slice(0, 3).map((drone) => (
             <Products drone={drone}> </Products>
           ))}
         </Grid>
@@ -38,7 +38,7 @@ const FeatureProducts = () => {
       )}
       <br />
       <Link to="/explore" style={{ textDecoration: "none" }}>
-        <Button variant="outlined">View orders</Button>
+        <Button variant="outlined">See More</Button>
       </Link>
     </Container>
   );

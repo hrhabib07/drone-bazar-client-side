@@ -2,9 +2,12 @@ import { Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const OrdersForm = ({ orders, price }) => {
-  const [ordersData, setOrdersData] = useState({});
+  const { user } = useAuth();
+  const email = user.email;
+  const [ordersData, setOrdersData] = useState({ email });
   //   console.log(orders);
   const history = useHistory();
 
@@ -36,7 +39,7 @@ const OrdersForm = ({ orders, price }) => {
           }
         });
 
-      fetch(`https://nameless-ridge-59413.herokuapp.com/deleteMyOrders`, {
+      fetch(`http://localhost:5000/deleteMyOrders/?email=${user?.email}`, {
         method: "delete",
         headers: { "content-type": "application/json" },
       })
@@ -65,14 +68,7 @@ const OrdersForm = ({ orders, price }) => {
           onChange={handleOnChange}
           sx={{ width: "60%", my: 2 }}
         />
-        <TextField
-          id="standard-basic"
-          label="Your Email"
-          variant="standard"
-          name="email"
-          onChange={handleOnChange}
-          sx={{ width: "60%", my: 2 }}
-        />
+
         <TextField
           required
           id="standard-basic"

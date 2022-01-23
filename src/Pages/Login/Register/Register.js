@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
+/* import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -97,3 +97,6 @@ const Register = () => {
 };
 
 export default Register;
+ */
+
+// this is older verstion of registration

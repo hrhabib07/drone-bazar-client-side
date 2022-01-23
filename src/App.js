@@ -1,18 +1,18 @@
 import "./App.css";
-import Navigation from "./Shared/Navigation/Navigation";
+import Navigation from "./Shared/Navbar/Navigation";
 import Home from "./Pages/Home/Home/Home";
 import Footer from "./Shared/Footer/Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
-import Register from "./Pages/Login/Register/Register";
 import Explore from "./Pages/Explore/Explore/Explore";
-import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
 import Orders from "./Pages/Orders/Orders";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AdminControl from "./Pages/Admin/Admin/AdminControl";
 import MyOrders from "./Pages/MyOrders/MyOrders";
 import ProcessAfterReview from "./Pages/Orders/ProcessAfterReview";
+import Registration from "./Pages/Login/Register/Registration";
+import AdminRoute from "./Pages/Login/Login/AdminRoute/AdmiRoute";
 
 function App() {
   return (
@@ -30,23 +30,22 @@ function App() {
             <PrivateRoute path="/orders">
               <Orders />
             </PrivateRoute>
+
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/adminLogin">
-              <AdminLogin />
-            </Route>
+
             <Route path="/processReview">
               <ProcessAfterReview />
             </Route>
-            <Route path="/myOrders">
+            <PrivateRoute path="/myOrders">
               <MyOrders />
-            </Route>
-            <Route path="/adminInVeryEnglishSystem">
+            </PrivateRoute>
+            <AdminRoute path="/adminDashboard">
               <AdminControl />
-            </Route>
+            </AdminRoute>
             <Route path="/register">
-              <Register />
+              <Registration />
             </Route>
             <Route exact path="/">
               <Home />

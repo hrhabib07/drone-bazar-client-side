@@ -10,17 +10,13 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import loginImg from "../../../images/login/login.jpg";
 import HomeIcon from "@mui/icons-material/Home";
 import useAuth from "../../../Hooks/useAuth";
-import {
-  useHistory,
-  useLocation,
-} from "react-router-dom/cjs/react-router-dom.min";
-const Login = () => {
-  const { loginUser, signInWithGoogle, isLoading, user } = useAuth();
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+const Registration = () => {
   const [userData, setUserData] = useState({});
-  const location = useLocation();
+  const { registerUser, isLoading, user, authError } = useAuth();
   const history = useHistory();
   const handleOnBlur = (e) => {
     const newUser = { ...userData };
@@ -31,7 +27,12 @@ const Login = () => {
   };
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    loginUser(userData.email, userData.password, location, history);
+    if (userData.password !== userData.password2) {
+      alert("password did not matched");
+      return;
+    }
+    registerUser(userData.email, userData.password, userData.name, history);
+    console.log(userData);
   };
   return (
     <Container
@@ -61,10 +62,19 @@ const Login = () => {
               sx={{ my: 5, fontWeight: 600 }}
             >
               {" "}
-              Login
+              Registration
             </Typography>
             {!isLoading && (
               <form onSubmit={handleLoginSubmit}>
+                <TextField
+                  label="Name"
+                  name="name"
+                  onBlur={handleOnBlur}
+                  variant="filled"
+                  sx={{ width: "80%" }}
+                />
+                <br />
+                <br />
                 <TextField
                   label="Email"
                   name="email"
@@ -84,8 +94,18 @@ const Login = () => {
                 />
                 <br />
                 <br />
-                <Link to="/register" style={{ textDecoration: "none" }}>
-                  <Button>New user? please register</Button>
+                <TextField
+                  label="Re-type Password"
+                  name="password2"
+                  onBlur={handleOnBlur}
+                  type="password"
+                  variant="filled"
+                  sx={{ width: "80%" }}
+                />
+                <br />
+                <br />
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <Button>Already Registered? please Login</Button>
                 </Link>
                 <br />
                 <Button
@@ -93,17 +113,10 @@ const Login = () => {
                   type="submit"
                   sx={{ width: "35%", m: 2 }}
                 >
-                  Login
+                  Submit
                 </Button>
-                <br />
-                <Button
-                  variant="contained"
-                  sx={{ width: { xs: "50%", md: "35%" }, m: 2 }}
-                  onClick={signInWithGoogle}
-                >
-                  Google sign in
-                </Button>
-                <br />
+                {authError && <Alert severity="error">{authError}</Alert>}
+
                 <Link to="/" style={{ textDecoration: "none" }}>
                   <IconButton aria-label="delete" size="large">
                     <HomeIcon fontSize="inherit" />
@@ -112,14 +125,11 @@ const Login = () => {
               </form>
             )}
             {isLoading && <CircularProgress />}
-            {user?.email && (
-              <Alert severity="success"> User login successful !</Alert>
-            )}
           </Container>
         </Grid>
         <Grid item xs={12} md={6}>
           <img
-            src="https://imgs.bharatmatrimony.com/bmimgs/login/login-otp-banner.png"
+            src="https://cdni.iconscout.com/illustration/premium/thumb/sign-up-page-1886582-1598253.png"
             width={"100%"}
             alt=""
           />
@@ -128,5 +138,4 @@ const Login = () => {
     </Container>
   );
 };
-
-export default Login;
+export default Registration;

@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Products from "../../Home/FeatureProducts/Products";
 import AllProducts from "./AllProducts";
 
 const Explore = () => {
@@ -40,51 +41,12 @@ const Explore = () => {
       {drones?.length ? (
         <Grid container spacing={2} xs={12} md={12} sx={{ my: 4 }}>
           {drones?.map((drone) => (
-            <AllProducts drone={drone}> </AllProducts>
+            <Products drone={drone}> </Products>
           ))}
         </Grid>
       ) : (
         <CircularProgress />
       )}
-      <Grid container spacing={2} xs={12} md={12} sx={{ m: 1 }}>
-        <Paper elevation={3} alignCenter sx={{ mx: "auto", p: 5 }}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            component="div"
-            sx={{ color: "#4779ca" }}
-          >
-            Order Summery
-          </Typography>
-          <Typography
-            variant="subtitle"
-            gutterBottom
-            component="div"
-            sx={{ color: "gray" }}
-          >
-            Total Products {orders?.length}
-          </Typography>
-          <Typography
-            variant="subtitle"
-            gutterBottom
-            component="div"
-            sx={{ color: "gray" }}
-          >
-            Total Price {totalPrice}
-          </Typography>
-          <Link to="/orders" style={{ textDecoration: "none" }}>
-            <Button sx={{ m: 2 }} variant="contained">
-              Place order{" "}
-            </Button>
-          </Link>
-          <Link to="/adminLogin" style={{ textDecoration: "none" }}>
-            <Button variant="outlined" sx={{ width: "60%", my: 2 }}>
-              {" "}
-              Admin{" "}
-            </Button>
-          </Link>
-        </Paper>
-      </Grid>
     </Container>
   );
 };

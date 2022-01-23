@@ -26,14 +26,7 @@ const AllProducts = ({ drone }) => {
         <Typography variant="h4" gutterBottom component="div">
           {drone.productName}
         </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{ color: "gray" }}
-          gutterBottom
-          component="div"
-        >
-          {drone.description}
-        </Typography>
+
         <Typography variant="h6" gutterBottom component="div">
           Price: $ {drone.price}
         </Typography>

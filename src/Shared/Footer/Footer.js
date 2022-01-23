@@ -1,61 +1,142 @@
-import { Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
+import Box from "@mui/material/Box";
+import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 
 const Footer = () => {
   return (
-    <div>
+    <Box sx={{ mt: 5, backgroundColor: "#1769aa", color: "white" }}>
       <hr />
-      <Box sx={{ my: 4 }}>
+      <Container sx={{ py: 5 }}>
         <Typography
           variant="h4"
-          gutterBottom
           component="div"
-          sx={{ color: "#4779ca", my: 0, py: 0, fontWeight: 600 }}
+          sx={{ fontWeight: 600, color: "yellow" }}
         >
           Drone Bazar
         </Typography>
         <Typography
-          variant="subtitle"
+          variant="h6"
           gutterBottom
           component="div"
-          sx={{ my: 0, py: 0 }}
+          sx={{ mb: 3, color: "black" }}
         >
-          Best online drone shop
+          The biggest drone shop in Your Area
         </Typography>
-      </Box>
-
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <Typography variant="h6" gutterBottom component="div">
-            Others services
-          </Typography>
-          <ul style={{ listStyleType: "none" }}>
-            <li>Flight controller</li>
-            <li>GPS module</li>
-            <li>Battery</li>
-            <li>Antenna</li>
-            <li>Receiver</li>
-          </ul>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={3}>
+            <Container sx={{ textAlign: "left" }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                component="div"
+                sx={{ fontWeight: 600, my: 4 }}
+              >
+                TOP CATEGORES
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Crossovers
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Hybrids
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Hybrid Cars
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Hybrid SUVs
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Concept Vehicles
+              </Typography>
+            </Container>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Container sx={{ textAlign: "left" }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                component="div"
+                sx={{ fontWeight: 600, my: 4 }}
+              >
+                ABOUT US
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Privacy
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Hybrid Cars
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Cookies
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Trademarks
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Terms of use
+              </Typography>
+            </Container>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Container sx={{ textAlign: "left" }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                component="div"
+                sx={{ fontWeight: 600, my: 4, my: 4 }}
+              >
+                USEFUL LINKS{" "}
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Our Partners
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Careers
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Sitemap
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Investors
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                &gt; Request a Quote
+              </Typography>
+            </Container>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Box sx={{ textAlign: "left" }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                component="div"
+                sx={{ fontWeight: 600, my: 4 }}
+              >
+                SUBSCRIBE NEWSLETTER
+              </Typography>
+              <Box sx={{ width: "100%" }}>
+                <TextField
+                  id="filled-basic"
+                  label="emailAddress"
+                  variant="filled"
+                  sx={{ backgroundColor: "white", width: "100%" }}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    height: "100px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button variant="contained">Subscribe </Button>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
-        <Grid item xs={8}>
-          <Typography variant="h6" gutterBottom component="div">
-            Contact us
-          </Typography>
-          <Box>
-            <Typography variant="subtitle" gutterBottom component="div">
-              email : dronebazar@gamil.com
-            </Typography>
-            <Typography variant="subtitle" gutterBottom component="div">
-              location : kochuketh, Dhaka.
-            </Typography>
-            <Typography variant="subtitle" gutterBottom component="div">
-              website : dronebazar.com
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
-    </div>
+      </Container>
+    </Box>
   );
 };
 

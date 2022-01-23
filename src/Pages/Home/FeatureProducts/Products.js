@@ -1,12 +1,43 @@
-import { Button, Card, CardMedia, Grid, Typography } from "@mui/material";
-import React from "react";
+import {
+  Alert,
+  Box,
+  Button,
+  Card,
+  CardMedia,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import * as React from "react";
+import Snackbar from "@mui/material/Snackbar";
+import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Products = ({ drone }) => {
+  // code for snackbar started here
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+    handlePurchase(drone);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  // code for snackbar ended here
+
   const { user } = useAuth();
   const handlePurchase = (order) => {
-    const newOrder = { ...order };
+    const email = user.email;
+    const newOrder = { ...order, email };
     const { _id, ...rest } = newOrder;
     console.log(rest);
     fetch("https://nameless-ridge-59413.herokuapp.com/orders", {
@@ -24,36 +55,64 @@ const Products = ({ drone }) => {
       <Card variant="outlined">
         <CardMedia
           component="img"
-          height="140"
+          height="180"
           image={drone?.img}
           alt="green iguana"
+          sx={{ borderBottom: "1px solid gray" }}
         />
-        <Typography variant="h4" gutterBottom component="div">
-          {drone.productName}
-        </Typography>
         <Typography
-          variant="subtitle1"
-          sx={{ color: "gray" }}
+          variant="h4"
           gutterBottom
           component="div"
+          sx={{ my: 2, fontWeight: 600, color: "darkblue" }}
         >
-          {drone.description}
+          {drone.productName}
         </Typography>
-        <Typography variant="h6" gutterBottom component="div">
-          Price: $ {drone.price}
+        <Typography component="div" sx={{ mb: 2 }}>
+          Price:
+          <span style={{ fontWeight: 600 }}> {drone.price}$</span> only
         </Typography>
-        {user.email ? (
-          <Button
-            onClick={() => handlePurchase(drone)}
-            sx={{ m: 2 }}
-            variant="contained"
+        <Container
+          sx={{
+            textAlign: "left",
+            height: "100px",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            variant="subtitle1"
+            sx={{ color: "gray" }}
+            gutterBottom
+            component="div"
           >
-            Purchase{" "}
-          </Button>
+            {drone.description.slice(0, 120)}
+          </Typography>
+        </Container>
+
+        {user.email ? (
+          <Box>
+            <Button
+              onClick={handleClick}
+              sx={{ my: 2, fontWeight: 600 }}
+              variant="contained"
+            >
+              Add to chart
+            </Button>
+            <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+              <Alert
+                onClose={handleClose}
+                severity="success"
+                sx={{ width: "100%" }}
+              >
+                This product is successfully added to the !
+              </Alert>
+            </Snackbar>
+          </Box>
         ) : (
           <Link to="/login" style={{ textDecoration: "none" }}>
             <Button sx={{ m: 2 }} variant="contained">
-              Purchase{" "}
+              Add to chart{" "}
             </Button>
           </Link>
         )}

@@ -1,4 +1,4 @@
-import {
+/* import {
   Alert,
   Button,
   CircularProgress,
@@ -22,13 +22,13 @@ const AdminLogin = () => {
     const adminPass = passRef.current.value;
     console.log(adminPass);
     console.log(adminId);
-    if (adminId === "admin@admin.com" && adminPass === "123456") {
-      history.push("/adminInVeryEnglishSystem");
+     if (adminId === "admin@admin.com" && adminPass === "123456") {
+      history.push("/adminDashboard");
     } else {
       alert(
         "Vai apni tho admin na aikane ki koran? Admin hoila github theke id pass nia asan naila apnake dukta dimu na. Sorry"
       );
-    }
+    } 
     e.preventDefault();
   };
 
@@ -69,3 +69,4 @@ const AdminLogin = () => {
 };
 
 export default AdminLogin;
+ */
