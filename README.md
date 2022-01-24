@@ -9,7 +9,7 @@
 
 This is a simple drone selling website made with react.js 
 
- Live site of my project is [Drone Bazar](https://drone-bazar-react-app.web.app/home) 
+ Live site of my project is [Drone Bazar](https://drone-bazar.web.app/) 
 
   
 ## FAQ
