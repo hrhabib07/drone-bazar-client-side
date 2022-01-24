@@ -1,19 +1,4 @@
 
-## Instarctoion for admin
-
-Please read this section if you are an admin or tester of this website.
-
-You will find add services section on the buttom of home page and if you want to add services 
-on this project you have to have this id and password just copy paste on the ui you will proceed.
-
-Thank you.
-
-```bash
-    Admin Id : admin@admin.com 
-
-    Admin Pass : 123456
-  
-```
     
 ## Authors
 
@@ -24,7 +9,7 @@ Thank you.
 
 This is a simple drone selling website made with react.js 
 
-<!-- Live site of my project is [Drone Bazar](https://drone-bazar-react-app.web.app/home) -->
+ Live site of my project is [Drone Bazar](https://drone-bazar-react-app.web.app/home) 
 
   
 ## FAQ
